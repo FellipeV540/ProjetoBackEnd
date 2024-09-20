@@ -1,18 +1,40 @@
-@startuml
+@startuml casodeuso
+left to right direction
 
-(First usecase)
-(Another usecase) as (UC2)
-usecase UC3
-usecase (Last\nusecase) as UC4
+actor "Internauta visitante" as Internauta
+actor "Usuário logado" as Usuario
+actor "Administrador" as admin
 
-:First actor:
-:Another/nactor: as Man2
-actor Woman3
-actor :Last actor: as Person1
+usecase "Cadastrar Usuário" as CU01
+usecase "Fazer Login" as CU02
 
-:User: --> (Use the application)
+usecase "Pesquisar posts" as CU03
+usecase "Acessar Posts" as CU04
+usecase "Salvar Posts" as CU05
+usecase "Curtir Posts" as CU11
+usecase "Acessar página de salvos/curtidos" as CU12
+usecase "Gerenciar Perfil de Usuário" as CU06
+usecase "Receber feed Personalizado" as CU07
+usecase "Filtrar posts" as CU10
 
-"Main Admin" as Admin
+usecase "Adicionar posts" as CU08
+usecase "Remover posts" as CU09
+
+Internauta --> CU01
+
+Usuario --> CU02
+Usuario --> CU03
+Usuario --> CU04
+Usuario --> CU05
+Usuario --> CU06
+Usuario --> CU07
+Usuario --> CU10
+Usuario --> CU11
+Usuario --> CU12
+
+admin --> CU02
+admin --> CU08
+admin --> CU09
 
 
 @enduml
